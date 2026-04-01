@@ -8,6 +8,7 @@ const {id} = useParams() as {id:string};
     <>
       <Link to={"/"}><h1>{id}</h1></Link>
       <h1>+</h1>
+      <h2>В силу вступили новые изменения</h2>
     </>
   );
 }
