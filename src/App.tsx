@@ -15,7 +15,7 @@ import { Component } from "./Component";
 export default function App() {
   return (
     <>
-      <Box sx={{ width: 300, ml: 5 }}>
+      <Box sx={{ width: 300, ml: 6 }}>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Component></Component>}/>
