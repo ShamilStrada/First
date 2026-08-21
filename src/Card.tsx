@@ -1,16 +1,13 @@
 import { Card } from "@mui/material";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { getAllRoutes } from "./lib/Route";
 export function MyCard() {
-const {id} = useParams() as {id:string};
+const {numberOne} = useParams() as {numberOne:string};
   return (
     <>
-      <Link to={"/"}><h1>{id}</h1></Link>
+      <Link to={getAllRoutes()}><h1>{numberOne}</h1></Link>
       <h2>В силу вступили новые изменения</h2>
-      <h2>Для теста</h2>
-      <h2>For new changes for me</h2>
-      <h3>Еще парочка изменений</h3>
-      <h4>Эти изменения он не увидит</h4>
     </>
   );
 }

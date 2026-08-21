@@ -3,12 +3,15 @@ import { Autocomplete, Slider } from "@mui/material";
 import { TextField } from "@mui/material";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { getViewEveryRoute } from "./lib/Route";
 const top100films: string[] = ["Texas and Mexico", "Russia Good"];
 export const Component = () => {
   const [value, setValue] = useState<string[]>([]);
   return (
     <>
-      <Link to={"/Card/s"} onClick={()=>alert("перешли по ссылке")}><h1>Список фильмов:{value}</h1></Link>
+    ///Здесь передаем линк на все остальное
+      <Link to={getViewEveryRoute({id:"numberOne"})} ><h1>Список фильмов:{value}</h1></Link>
+      <Link to={getViewEveryRoute({id:"numberTwo"})}><h1>Переход на другой компонент</h1></Link>
       <Autocomplete
         value={value}
         onChange={(event,value) =>{ setValue(value),console.log(value)}}

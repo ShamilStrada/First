@@ -1,7 +1,9 @@
-import { Link } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
+import { getAllRoutes } from "./lib/Route"
 
 export const NewComponent=()=>{
+const {numberTwo} = useParams() as {numberTwo:string}
 return(
-<Link to={"/"}><h1>Третий компонент</h1></Link>
+<Link to={getAllRoutes()}><h1>{numberTwo}</h1></Link>
 )
 }
