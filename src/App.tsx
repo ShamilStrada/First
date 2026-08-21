@@ -15,7 +15,7 @@ export default function App() {
           <Routes>
             <Route path={getAllRoutes()} element={<Component></Component>} />
             <Route
-              path={getViewEveryRoute({ id: `:numberOne `})}
+              path={getViewEveryRoute({ id: `:numberOne ` })}
               element={<MyCard></MyCard>}
             />
             <Route
