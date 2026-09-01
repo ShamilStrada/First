@@ -10,7 +10,7 @@ import { getAllRoutes, getViewEveryRoute } from "./lib/Route";
 export default function App() {
   return (
     <>
-      <Box sx={{ width: 300, ml: 6 }}>
+      {/* <Box sx={{ width: 300, ml: 6 }}> */}
         <BrowserRouter>
           <Routes>
             <Route path={getAllRoutes()} element={<Component></Component>} />
@@ -24,13 +24,21 @@ export default function App() {
             />
           </Routes>
         </BrowserRouter>
-      </Box>
+      {/* </Box> */}
       <BoxStyled>
         <MyCardTrue></MyCardTrue>
         <MyCardTrue></MyCardTrue>
+        {/* <MyCardTrue></MyCardTrue>
         <MyCardTrue></MyCardTrue>
         <MyCardTrue></MyCardTrue>
         <MyCardTrue></MyCardTrue>
+        <MyCardTrue></MyCardTrue>
+        <MyCardTrue></MyCardTrue>
+        <MyCardTrue></MyCardTrue>
+        <MyCardTrue></MyCardTrue>
+        <MyCardTrue></MyCardTrue>
+        <MyCardTrue></MyCardTrue>
+        <MyCardTrue></MyCardTrue> */}
       </BoxStyled>
     </>
   );
