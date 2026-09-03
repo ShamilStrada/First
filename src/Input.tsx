@@ -29,6 +29,7 @@ export const InputFindFilm = () => {
       .catch((err) => console.error(err.message))
   }, [flag])
   return (
+    <>
     <form
       onSubmit={(e) => {
         e.preventDefault()
@@ -43,5 +44,6 @@ export const InputFindFilm = () => {
         onChange={(e) => setnameFilm(e.target.value)}
       ></TextField>
     </form>
+    </>
   )
 }

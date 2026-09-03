@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom'
 import { getViewEveryRoute } from './lib/Route'
 import { BoxStyled2 } from './Styles'
 import { InputFindFilm } from './Input'
+import { Provider } from 'react-redux'
+import { store } from './Redux/Store'
+import { Counter } from './Redux/ButtonFromRedux'
 const top100films: string[] = ['Texas and Mexico', 'Russia Good']
 export const Component = () => {
   const [data, setData] = useState<[]>()
@@ -34,7 +37,7 @@ export const Component = () => {
   }, [])
   const [value, setValue] = useState<string[]>([])
   return (
-    <>
+    <Provider store={store}>
       <BoxStyled2>
         <InputFindFilm></InputFindFilm>
         <Link to={getViewEveryRoute({ id: 'numberOne' })}>
@@ -45,7 +48,7 @@ export const Component = () => {
         </Link>
         <Autocomplete
           value={value}
-          onChange={(event, value) => {
+          onChange={(e, value) => {
             ;(setValue(value), console.log(value))
           }}
           multiple
@@ -57,9 +60,9 @@ export const Component = () => {
         <Slider min={0} max={100} />
         <button onClick={() => console.log(data?.length)}>
           Получить в консоль
-        </button>
-        <p>{data?.length}</p>
+        </button> 
+        <Counter></Counter>    
       </BoxStyled2>
-    </>
+    </Provider>
   )
 }
