@@ -9,7 +9,8 @@ export function MyCard() {
       <Link to={getAllRoutes()}>
         <h1>{numberOne}</h1>
       </Link>
-      <h2>В силу вступили новые изменения</h2>
+      <h2>В силу нихуя не вступило</h2>
+      <h3>GGmoll</h3>
     </>
   );
 }
