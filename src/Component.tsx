@@ -1,13 +1,15 @@
-import { Autocomplete, Slider } from '@mui/material'
+import { Autocomplete, Rating, Slider } from '@mui/material'
 import { TextField } from '@mui/material'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { getViewEveryRoute } from './lib/Route'
 import { BoxStyled2 } from './Styles'
 import { InputFindFilm } from './Input'
-import { Provider } from 'react-redux'
-import { store } from './Redux/Store'
+import { Provider, useSelector } from 'react-redux'
+import { store, type RootState } from './Redux/Store'
 import { Counter } from './Redux/ButtonFromRedux'
+import { PopUp } from './Redux/PopUpFromRedux'
+
 const top100films: string[] = ['Texas and Mexico', 'Russia Good']
 export const Component = () => {
   const [data, setData] = useState<[]>()
@@ -36,8 +38,9 @@ export const Component = () => {
       .catch((err) => console.log('Произошла ошибка: ' + err.message))
   }, [])
   const [value, setValue] = useState<string[]>([])
-  return (
-    <Provider store={store}>
+  // const state=store.getState()//берет разовое состояние 
+  const isLoggedIn=useSelector((state:RootState)=>state.user.isLoggedIn)
+  return isLoggedIn? 
       <BoxStyled2>
         <InputFindFilm></InputFindFilm>
         <Link to={getViewEveryRoute({ id: 'numberOne' })}>
@@ -61,8 +64,8 @@ export const Component = () => {
         <button onClick={() => console.log(data?.length)}>
           Получить в консоль
         </button> 
-        <Counter></Counter>    
+        <Counter></Counter> 
+        <Rating defaultValue={9} readOnly max={10}> </Rating>   
       </BoxStyled2>
-    </Provider>
-  )
+  :(<PopUp></PopUp>)
 }

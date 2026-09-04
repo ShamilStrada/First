@@ -1,4 +1,4 @@
-import { TextField } from '@mui/material'
+import { Paper, TextField } from '@mui/material'
 import { useEffect } from 'react'
 import { useState } from 'react'
 
@@ -38,11 +38,13 @@ export const InputFindFilm = () => {
       }}
     >
       {' '}
-      <TextField
+      <Paper elevation={1}>
+      <TextField sx={{width:'100%'}}
         placeholder="Введите название фильма"
         value={nameFilm}
         onChange={(e) => setnameFilm(e.target.value)}
       ></TextField>
+      </Paper>
     </form>
     </>
   )

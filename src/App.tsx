@@ -6,11 +6,14 @@ import { MyCardTrue } from "./MyCard";
 import { BoxStyled } from "./Styles";
 import { NewComponent } from "./NewComponent";
 import { getAllRoutes, getViewEveryRoute } from "./lib/Route";
+import { Provider } from "react-redux";
+import { store } from "./Redux/Store";
 
 export default function App() {
   return (
     <>
       {/* <Box sx={{ width: 300, ml: 6 }}> */}
+      <Provider store={store}>
         <BrowserRouter>
           <Routes>
             <Route path={getAllRoutes()} element={<Component></Component>} />
@@ -40,6 +43,7 @@ export default function App() {
         <MyCardTrue></MyCardTrue>
         <MyCardTrue></MyCardTrue> */}
       </BoxStyled>
+      </Provider>
     </>
   );
 }
