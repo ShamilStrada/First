@@ -5,7 +5,7 @@ import { increment,decrement,reset } from "./CounterSlice";
 
 export function Counter(){
     const value=useSelector((state:RootState)=>state.counter.value)//данный хук дает доступ к хранилищу
-    const dispatch = useDispatch()
+    const dispatch = useDispatch()//доступ к функциям
     return (
         <div>
             <p>{value}</p>
